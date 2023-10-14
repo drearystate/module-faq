@@ -1,0 +1,151 @@
+FAQ Module Documentation
+Structure Overview and Details:
+1. Form:
+This directory is crucial for handling user input and interactions. It contains form definitions that interface with the user, capture inputs, and validate data.
+
+FAQModule
+│
+├── Form
+│   ├── Faq.php
+│   └── Faq [Directory]
+│
+├── Model
+│   ├── Faq.php
+│   └── Db [Directory]
+│
+├── controllers
+│   ├── ApplicationController.php
+│   └── Mobile [Directory]
+│
+├── features
+│   └── faq [Directory]
+│
+├── resources
+│   ├── db [Directory]
+│   ├── design [Directory]
+│   └── translations [Directory]
+│
+└── package.json
+
+
+
+Contents:
+
+Faq.php: This file likely contains the main form structure for adding or editing FAQs.
+
+Faq (Directory): Contains additional form components or structures related to the FAQ feature. The exact content can vary based on the specific requirements of the module.
+
+2. Model:
+Handles the data structures, relations, and operations (CRUD) for the module.
+
+Contents:
+
+Faq.php: Defines the primary data structure and methods for CRUD operations on FAQs.
+
+Db (Directory): Contains database-related files. From the original documentation:
+
+Schema definition files (table_name.php) which describe the database tables.
+Files that reflect the database in its latest version. Any updates to the module would require a comparison against these files.
+3. controllers:
+Manages the business logic, request/response handling, and the interaction between the frontend and backend.
+
+Contents:
+
+ApplicationController.php: Manages main operations for the FAQ module in the SiberianCMS back office.
+
+Mobile (Directory): Contains controllers specific to the mobile frontend. These controllers handle how FAQs are presented and interacted with in the mobile app.
+
+4. features:
+Crucial for integrating the FAQ module as a feature within SiberianCMS mobile apps.
+
+Contents:
+
+faq (Directory): Contains core files related to the FAQ feature in mobile apps. This would include:
+feature.json: Defines the feature's properties, routes, layouts, icons, files, and other configurations. This file is essential for the feature's integration and behavior within the app.
+5. resources:
+A central directory housing various assets, configurations, and design elements for the FAQ module.
+
+Contents:
+
+db (Directory): Contains database schemas and initial data. This would include:
+
+schema: Files that define the structure of database tables.
+data: Files that insert default values during module installation or updates.
+design (Directory): Contains design assets, templates, and styles ensuring the FAQ module aligns well with SiberianCMS design guidelines. This might include:
+
+CSS stylesheets for the module's look and feel.
+JavaScript files for frontend interactivity.
+Image assets and layouts.
+Templates defining the structure and layout of the module's pages.
+translations (Directory): Contains localization files for the module. This ensures it can be translated into different languages. The module uses .po files for this purpose.
+
+6. package.json:
+A vital file for the SiberianCMS installer. It informs the installer about the module, its requirements, dependencies, and routines to run during installation or updates.
+
+
+
+
+Advanced Details:
+1. Form:
+The contents within the Form directory typically involve capturing and validating user input before it's processed by the application or stored in the database.
+
+Requirements:
+Fields and validation rules for adding or editing FAQs.
+Handling of user input errors and appropriate feedback messages.
+Integration with the backend to process and store data.
+2. Model:
+Here, the core data logic of the module is housed.
+
+Requirements:
+Data structures corresponding to the database tables.
+Methods for CRUD operations ensuring clean data transactions.
+Relationships between different data entities, if any.
+3. controllers:
+Controllers act as intermediaries, processing requests and managing the logic of the application.
+
+Requirements:
+Proper routing to handle different requests, like viewing, adding, or editing FAQs.
+Logic to interact with the Model and ensure data integrity.
+Rendering appropriate views or responses back to the user.
+4. features:
+This directory is pivotal in integrating the module functionality within the SiberianCMS mobile apps.
+
+Requirements:
+Configuration to define how the feature behaves within the app.
+Proper routing to handle feature-specific requests in the app.
+Assets like icons, images, or other media related to the feature.
+5. resources:
+db:
+Ensuring a seamless database experience is critical.
+
+Requirements:
+Properly structured schema files to ensure the database tables are set up correctly.
+Data files to seed the database with initial values or defaults.
+design:
+How the module appears and feels to the user is managed here.
+
+Requirements:
+Consistency with SiberianCMS design principles.
+Responsive design to cater to various device sizes.
+Interactive elements to enhance user experience.
+translations:
+Ensuring global reach means the module should be translatable.
+
+Requirements:
+.po files for different languages to support translation.
+Consistency in translation keys across different files.
+Proper context provided for each translation to avoid ambiguity.
+6. package.json:
+This file is paramount to the SiberianCMS installer.
+
+Requirements:
+Clearly defined module name, version, and description.
+Dependencies and their specific versions listed.
+Installation and update routines specified.
+Packaging and Deployment:
+Once the development of the module is complete, it needs to be packaged for deployment. This involves:
+
+Ensuring all required files and directories are present.
+Removing any development-only files or configurations.
+Zipping the module contents into a .zip file, ensuring the structure remains intact.
+Testing the module by installing it in a SiberianCMS instance to ensure everything works as expected.
